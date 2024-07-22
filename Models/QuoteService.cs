@@ -15,9 +15,9 @@ public class QuoteService
     {
         var response = await _httpClient.GetStringAsync("https://type.fit/api/quotes");
         var quotes = JsonSerializer.Deserialize<Quote[]>(response);
-        Console.WriteLine(response);
-        Console.WriteLine(quotes);
-        Console.WriteLine(quotes[1].text);
+        // Console.WriteLine(response);
+        // Console.WriteLine(quotes);
+        // Console.WriteLine(quotes[1].text);
 
         // Console.WriteLine(quotes);
 
@@ -28,6 +28,7 @@ public class QuoteService
 public class Quote
 {
     public string text { get; set; }
+    public string? id { get; set; }
     public string author { get; set; }
 
 }

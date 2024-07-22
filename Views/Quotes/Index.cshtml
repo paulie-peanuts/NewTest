@@ -1,4 +1,4 @@
-@model Quote[]
+@model SelectedQuoteViewModel
 
 <!DOCTYPE html>
 <html>
@@ -8,14 +8,20 @@
 <body>
     <h1>Quotes</h1>
     <ul>
-        @if (Model.Length > 0)
+        @if (Model != null)
         {
-            @foreach (var quote in Model)
+    <form asp-action="SaveQuote" method="post">
+        <ul>
+            @foreach (var quote in Model.Quotes)
             {
                 <li>
-                    <strong>@quote.text</strong> - <em>@quote.author</em>
+                    <input type="radio" id="@quote.text" name="SelectedQuote" value="@quote.text" />
+                    <label for="@quote.text"><strong>@quote.text</strong> - <em>@quote.author</em></label>
                 </li>
             }
+        </ul>
+        <button type="submit">Save Selected Quote</button>
+    </form>
         }
         else
         {

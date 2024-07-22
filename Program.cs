@@ -1,8 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddHttpClient<QuoteService>();
 builder.Services.AddControllersWithViews();
+
+var connectionString = "host=localhost;user=greenroutine;password=greenroutine;database=NewTest";
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 36));
+
+builder.Services.AddDbContext<QuoteDbContext>(options => options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 36))));
 
 var app = builder.Build();
 
