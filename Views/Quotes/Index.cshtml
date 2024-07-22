@@ -1,0 +1,26 @@
+@model Quote[]
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quotes</title>
+</head>
+<body>
+    <h1>Quotes</h1>
+    <ul>
+        @if (Model.Length > 0)
+        {
+            @foreach (var quote in Model)
+            {
+                <li>
+                    <strong>@quote.text</strong> - <em>@quote.author</em>
+                </li>
+            }
+        }
+        else
+        {
+            <li>No quotes available.</li>
+        }
+    </ul>
+</body>
+</html>

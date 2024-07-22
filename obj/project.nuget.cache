@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BWx54zVNC7E=",
+  "success": true,
+  "projectFilePath": "/Users/paulfilipkowski/Desktop/LaunchCode/newprojs/new/NewTest/NewTest.csproj",
+  "expectedPackageFiles": [
+    "/Users/paulfilipkowski/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
