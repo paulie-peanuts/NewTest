@@ -1,0 +1,23 @@
+@model IEnumerable<SavedQuote>
+
+@{
+    ViewData["Title"] = "Saved Quotes";
+}
+
+<h1>Saved Quotes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Quote</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quote in Model)
+        {
+            <tr>
+                <td>@quote.Text</td>
+            </tr>
+        }
+    </tbody>
+</table>

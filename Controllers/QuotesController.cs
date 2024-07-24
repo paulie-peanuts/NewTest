@@ -60,4 +60,11 @@ public class QuotesController : Controller
         model.Quotes = await _quoteService.GetQuotesAsync();
         return View("Index", model);
     }
+
+    [HttpGet]
+        public async Task<IActionResult> List()
+    {
+        var quotes = await _dbContext.SavedQuotes.ToListAsync();
+        return View(quotes);
+    }
 }
